@@ -14,6 +14,7 @@
 		77423C91242A9B80003BB591 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77423C8A242A9B80003BB591 /* NewsfeedViewController.swift */; };
 		77423C92242A9B80003BB591 /* NewsfeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77423C8B242A9B80003BB591 /* NewsfeedInteractor.swift */; };
 		77423C95242A9F71003BB591 /* NewsfeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77423C94242A9F71003BB591 /* NewsfeedViewController.storyboard */; };
+		779DE8F6242BC14F005F8CFB /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779DE8F5242BC14F005F8CFB /* WebImageView.swift */; };
 		77AB84C12429080400E3B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84C02429080400E3B3A5 /* AppDelegate.swift */; };
 		77AB84CA2429080700E3B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84C92429080700E3B3A5 /* Assets.xcassets */; };
 		77AB84CD2429080700E3B3A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84CB2429080700E3B3A5 /* LaunchScreen.storyboard */; };
@@ -23,12 +24,12 @@
 		77AB84E124294CB800E3B3A5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84E024294CB800E3B3A5 /* AuthViewController.swift */; };
 		77AB84E324294CC900E3B3A5 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84E224294CC900E3B3A5 /* AuthViewController.storyboard */; };
 		77AB84E62429575600E3B3A5 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84E52429575600E3B3A5 /* UIViewController + Storyboard.swift */; };
-		77AB84E92429606000E3B3A5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84E82429606000E3B3A5 /* FeedViewController.swift */; };
-		77AB84EB2429606D00E3B3A5 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84EA2429606D00E3B3A5 /* FeedViewController.storyboard */; };
 		77AB84EE242A193700E3B3A5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84ED242A193700E3B3A5 /* NetworkService.swift */; };
 		77AB84F0242A1A3F00E3B3A5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84EF242A1A3F00E3B3A5 /* API.swift */; };
 		77AB84F3242A840800E3B3A5 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84F2242A840800E3B3A5 /* FeedResponse.swift */; };
 		77AB84F5242A893600E3B3A5 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84F4242A893600E3B3A5 /* NetworkDataFetcher.swift */; };
+		77D57292242B6A050003BB3C /* NewsfeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D57291242B6A050003BB3C /* NewsfeedCell.swift */; };
+		77D57294242B6A440003BB3C /* NewsfeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D57293242B6A440003BB3C /* NewsfeedCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		77423C8A242A9B80003BB591 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		77423C8B242A9B80003BB591 /* NewsfeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedInteractor.swift; sourceTree = "<group>"; };
 		77423C94242A9F71003BB591 /* NewsfeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsfeedViewController.storyboard; sourceTree = "<group>"; };
+		779DE8F5242BC14F005F8CFB /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		77AB84BD2429080400E3B3A5 /* VKNewsLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77AB84C02429080400E3B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77AB84C92429080700E3B3A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,12 +65,12 @@
 		77AB84E024294CB800E3B3A5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		77AB84E224294CC900E3B3A5 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		77AB84E52429575600E3B3A5 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
-		77AB84E82429606000E3B3A5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		77AB84EA2429606D00E3B3A5 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		77AB84ED242A193700E3B3A5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		77AB84EF242A1A3F00E3B3A5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		77AB84F2242A840800E3B3A5 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		77AB84F4242A893600E3B3A5 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		77D57291242B6A050003BB3C /* NewsfeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCell.swift; sourceTree = "<group>"; };
+		77D57293242B6A440003BB3C /* NewsfeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		77423C69242A9810003BB591 /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
+				77D57290242B69E80003BB3C /* Cell */,
 				77423C94242A9F71003BB591 /* NewsfeedViewController.storyboard */,
 				77423C8A242A9B80003BB591 /* NewsfeedViewController.swift */,
 				77423C8B242A9B80003BB591 /* NewsfeedInteractor.swift */,
@@ -119,7 +122,6 @@
 			children = (
 				77AB84DD2429403600E3B3A5 /* App */,
 				77AB84E424294CE000E3B3A5 /* Auth */,
-				77AB84EC2429607000E3B3A5 /* FeedViewController */,
 				77423C69242A9810003BB591 /* Newsfeed */,
 				77AB84DC2429402200E3B3A5 /* Services */,
 				77AB84E72429576200E3B3A5 /* Helpers */,
@@ -187,17 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				77AB84E52429575600E3B3A5 /* UIViewController + Storyboard.swift */,
+				779DE8F5242BC14F005F8CFB /* WebImageView.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		77AB84EC2429607000E3B3A5 /* FeedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				77AB84E82429606000E3B3A5 /* FeedViewController.swift */,
-				77AB84EA2429606D00E3B3A5 /* FeedViewController.storyboard */,
-			);
-			path = FeedViewController;
 			sourceTree = "<group>";
 		};
 		77AB84F1242A83EC00E3B3A5 /* Models */ = {
@@ -206,6 +200,15 @@
 				77AB84F2242A840800E3B3A5 /* FeedResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		77D57290242B69E80003BB3C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77D57291242B6A050003BB3C /* NewsfeedCell.swift */,
+				77D57293242B6A440003BB3C /* NewsfeedCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +275,7 @@
 				77AB84CA2429080700E3B3A5 /* Assets.xcassets in Resources */,
 				77423C95242A9F71003BB591 /* NewsfeedViewController.storyboard in Resources */,
 				77AB84E324294CC900E3B3A5 /* AuthViewController.storyboard in Resources */,
-				77AB84EB2429606D00E3B3A5 /* FeedViewController.storyboard in Resources */,
+				77D57294242B6A440003BB3C /* NewsfeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,15 +312,16 @@
 				77AB84E124294CB800E3B3A5 /* AuthViewController.swift in Sources */,
 				77AB84C12429080400E3B3A5 /* AppDelegate.swift in Sources */,
 				77423C8D242A9B80003BB591 /* NewsfeedPresenter.swift in Sources */,
-				77AB84E92429606000E3B3A5 /* FeedViewController.swift in Sources */,
 				77423C8F242A9B80003BB591 /* NewsfeedRouter.swift in Sources */,
 				77AB84DB2429212700E3B3A5 /* AuthService.swift in Sources */,
 				77AB84EE242A193700E3B3A5 /* NetworkService.swift in Sources */,
 				77423C90242A9B80003BB591 /* NewsfeedModels.swift in Sources */,
+				779DE8F6242BC14F005F8CFB /* WebImageView.swift in Sources */,
 				77AB84F5242A893600E3B3A5 /* NetworkDataFetcher.swift in Sources */,
 				77423C8E242A9B80003BB591 /* NewsfeedWorker.swift in Sources */,
 				77AB84E62429575600E3B3A5 /* UIViewController + Storyboard.swift in Sources */,
 				77AB84F0242A1A3F00E3B3A5 /* API.swift in Sources */,
+				77D57292242B6A050003BB3C /* NewsfeedCell.swift in Sources */,
 				77423C92242A9B80003BB591 /* NewsfeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
