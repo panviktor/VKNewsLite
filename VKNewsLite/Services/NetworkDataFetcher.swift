@@ -31,6 +31,7 @@ struct NetworkDataFetcher: DataFetcher {
             response(decoded?.response)
         }
     }
+    
     private func decodeJSON<T: Decodable> (type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

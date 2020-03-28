@@ -32,13 +32,14 @@ struct FeedItem: Decodable {
 
 struct Attechment: Decodable {
     let photo: Photo?
+    
 }
 
 struct Photo: Decodable {
     let sizes: [PhotoSize]
     
     var height: Int {
-         return getPropperSize().height
+        return getPropperSize().height
     }
     
     var width: Int {
@@ -46,14 +47,14 @@ struct Photo: Decodable {
     }
     
     var srcBIG: String {
-         return getPropperSize().url
+        return getPropperSize().url
     }
     
     private func getPropperSize() -> PhotoSize {
         if let sizeX = sizes.first(where: { $0.type == "x" }) {
             return sizeX
         } else if let fallBackSize = sizes.last {
-             return fallBackSize
+            return fallBackSize
         } else {
             return PhotoSize(type: "wrong image", url: "wrong image", width: 0, height: 0)
         }

@@ -7,24 +7,24 @@
 //
 
 enum Newsfeed {
-   
-  enum Model {
-    struct Request {
-      enum RequestType {
-        case getNewsfeed
-      }
+    
+    enum Model {
+        struct Request {
+            enum RequestType {
+                case getNewsfeed
+            }
+        }
+        struct Response {
+            enum ResponseType {
+                case presentNewsfeed(feed: FeedResponse)
+            }
+        }
+        struct ViewModel {
+            enum ViewModelData {
+                case displayNewsfeed(feedViewModel: FeedViewModel)
+            }
+        }
     }
-    struct Response {
-      enum ResponseType {
-        case presentNewsfeed(feed: FeedResponse)
-      }
-    }
-    struct ViewModel {
-      enum ViewModelData {
-        case displayNewsfeed(feedViewModel: FeedViewModel)
-      }
-    }
-  }
 }
 
 struct FeedViewModel {
@@ -38,9 +38,10 @@ struct FeedViewModel {
         var shares: String?
         var views: String?
         var photoAttachement: FeedCellPhotoAttachementViewModel?
+        var sizes: FeedCellSizes
     }
     
-     struct FeedCellPhotoAttachment: FeedCellPhotoAttachementViewModel {
+    struct FeedCellPhotoAttachment: FeedCellPhotoAttachementViewModel {
         var photoUrlString: String?
         var width: Int
         var height: Int

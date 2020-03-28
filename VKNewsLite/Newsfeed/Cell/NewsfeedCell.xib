@@ -17,11 +17,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KgP-aX-cXt" userLabel="Card View">
-                        <rect key="frame" x="8" y="0.0" width="359" height="201"/>
+                        <rect key="frame" x="8" y="0.0" width="359" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMz-8e-jhF">
-                                <rect key="frame" x="8" y="52" width="343" height="50"/>
+                                <rect key="frame" x="8" y="52" width="343" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -29,11 +29,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqC-wj-8Lh" customClass="WebImageView" customModule="VKNewsLite" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="359" height="43"/>
+                                <rect key="frame" x="0.0" y="112" width="359" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dci-lP-AEk" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="156" width="359" height="44"/>
+                                <rect key="frame" x="0.0" y="155" width="359" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-k6-dFi">
@@ -145,6 +145,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bottomView" destination="dci-lP-AEk" id="MVK-Wx-Fh9"/>
+                <outlet property="cardView" destination="KgP-aX-cXt" id="bRt-g8-hze"/>
                 <outlet property="commentsLabel" destination="2dw-yx-jYq" id="yHZ-wk-MWn"/>
                 <outlet property="dateLabel" destination="kIC-eN-c4h" id="TYR-K4-8UQ"/>
                 <outlet property="iconImageView" destination="Rdj-N9-JGz" id="hLa-xN-B9t"/>

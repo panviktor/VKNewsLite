@@ -18,6 +18,14 @@ protocol FeedCellViewModel {
     var shares: String? { get }
     var views: String? { get }
     var photoAttachement: FeedCellPhotoAttachementViewModel? { get }
+    var sizes: FeedCellSizes { get }
+}
+
+protocol FeedCellSizes {
+    var postLabelFrame: CGRect { get }
+    var attachmentFrame: CGRect { get }
+    var bottomViewFrame: CGRect { get }
+    var totalHeight: CGFloat { get }
 }
 
 protocol FeedCellPhotoAttachementViewModel {
@@ -30,21 +38,33 @@ class NewsfeedCell: UITableViewCell {
     
     static let reuseId = "NewsfeedCell"
     
-    @IBOutlet weak var iconImageView: WebImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var postImageView: WebImageView!
-    @IBOutlet weak var postLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
-    @IBOutlet weak var sharesLabel: UILabel!
-    @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet var cardView: UIView!
+    @IBOutlet var iconImageView: WebImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var likesLabel: UILabel!
+    @IBOutlet var postImageView: WebImageView!
+    @IBOutlet var postLabel: UILabel!
+    @IBOutlet var commentsLabel: UILabel!
+    @IBOutlet var sharesLabel: UILabel!
+    @IBOutlet var viewsLabel: UILabel!
+    @IBOutlet var bottomView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
+        
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+        backgroundColor = .clear
+        selectionStyle = .none
+    }
+    
+    override func prepareForReuse() {
+        iconImageView.set(imageURL: nil)
+        postImageView.set(imageURL: nil)
     }
     
     func set(viewModel: FeedCellViewModel) {
@@ -57,6 +77,10 @@ class NewsfeedCell: UITableViewCell {
         sharesLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
         
+        postLabel.frame = viewModel.sizes.postLabelFrame
+        postImageView.frame = viewModel.sizes.attachmentFrame
+        bottomView.frame = viewModel.sizes.bottomViewFrame
+        
         if let photoAttachment = viewModel.photoAttachement {
             postImageView.set(imageURL: photoAttachment.photoUrlString)
             postImageView.isHidden = false
@@ -64,5 +88,4 @@ class NewsfeedCell: UITableViewCell {
             postImageView.isHidden = true
         }
     }
-    
 }
