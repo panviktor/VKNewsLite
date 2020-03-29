@@ -32,7 +32,6 @@ struct FeedItem: Decodable {
 
 struct Attechment: Decodable {
     let photo: Photo?
-    
 }
 
 struct Photo: Decodable {
