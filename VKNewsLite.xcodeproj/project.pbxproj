@@ -21,6 +21,9 @@
 		7742C0752430C9D500BF5253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C0742430C9D500BF5253 /* Constants.swift */; };
 		7742C07A243217A600BF5253 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C079243217A600BF5253 /* GalleryCollectionView.swift */; };
 		7742C07C243218DD00BF5253 /* GalleryCollcetionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C07B243218DD00BF5253 /* GalleryCollcetionViewCell.swift */; };
+		7742C07E2432382200BF5253 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C07D2432382200BF5253 /* RowLayout.swift */; };
+		7742C0812432670E00BF5253 /* TitlteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C0802432670E00BF5253 /* TitlteView.swift */; };
+		7742C083243267F700BF5253 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C082243267F700BF5253 /* InsetableTextField.swift */; };
 		779DE8F6242BC14F005F8CFB /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779DE8F5242BC14F005F8CFB /* WebImageView.swift */; };
 		77AB84C12429080400E3B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84C02429080400E3B3A5 /* AppDelegate.swift */; };
 		77AB84CA2429080700E3B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84C92429080700E3B3A5 /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		7742C0742430C9D500BF5253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7742C079243217A600BF5253 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 		7742C07B243218DD00BF5253 /* GalleryCollcetionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollcetionViewCell.swift; sourceTree = "<group>"; };
+		7742C07D2432382200BF5253 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
+		7742C0802432670E00BF5253 /* TitlteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlteView.swift; sourceTree = "<group>"; };
+		7742C082243267F700BF5253 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		779DE8F5242BC14F005F8CFB /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		77AB84BD2429080400E3B3A5 /* VKNewsLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77AB84C02429080400E3B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		77423C69242A9810003BB591 /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
+				7742C07F243266F000BF5253 /* TitleView */,
 				7742C0782432177F00BF5253 /* GalleryView */,
 				77D57290242B69E80003BB3C /* Cell */,
 				77423C94242A9F71003BB591 /* NewsfeedViewController.storyboard */,
@@ -116,8 +123,18 @@
 			children = (
 				7742C079243217A600BF5253 /* GalleryCollectionView.swift */,
 				7742C07B243218DD00BF5253 /* GalleryCollcetionViewCell.swift */,
+				7742C07D2432382200BF5253 /* RowLayout.swift */,
 			);
 			path = GalleryView;
+			sourceTree = "<group>";
+		};
+		7742C07F243266F000BF5253 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				7742C0802432670E00BF5253 /* TitlteView.swift */,
+				7742C082243267F700BF5253 /* InsetableTextField.swift */,
+			);
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 		77AB84B42429080400E3B3A5 = {
@@ -334,6 +351,7 @@
 				77423C91242A9B80003BB591 /* NewsfeedViewController.swift in Sources */,
 				77AB84E124294CB800E3B3A5 /* AuthViewController.swift in Sources */,
 				77AB84C12429080400E3B3A5 /* AppDelegate.swift in Sources */,
+				7742C083243267F700BF5253 /* InsetableTextField.swift in Sources */,
 				77423C8D242A9B80003BB591 /* NewsfeedPresenter.swift in Sources */,
 				77423C8F242A9B80003BB591 /* NewsfeedRouter.swift in Sources */,
 				77AB84DB2429212700E3B3A5 /* AuthService.swift in Sources */,
@@ -349,6 +367,8 @@
 				77AB84E62429575600E3B3A5 /* UIViewController + Storyboard.swift in Sources */,
 				77AB84F0242A1A3F00E3B3A5 /* API.swift in Sources */,
 				7742C06F242F63C400BF5253 /* String+Height.swift in Sources */,
+				7742C0812432670E00BF5253 /* TitlteView.swift in Sources */,
+				7742C07E2432382200BF5253 /* RowLayout.swift in Sources */,
 				77423C92242A9B80003BB591 /* NewsfeedInteractor.swift in Sources */,
 				7742C06D242F570900BF5253 /* NewsfeedCellLayoutCalcaulator.swift in Sources */,
 			);
