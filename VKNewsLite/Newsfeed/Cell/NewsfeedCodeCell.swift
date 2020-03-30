@@ -8,10 +8,41 @@
 
 import UIKit
 
+protocol NewsfeedCodeCellDelegate: class {
+    func revealPost(for cell: NewsfeedCodeCell)
+}
+
+protocol FeedCellViewModel {
+    var iconUrlString: String { get }
+    var name: String { get }
+    var date: String { get }
+    var text: String? { get }
+    var likes: String? { get }
+    var comments: String? { get }
+    var shares: String? { get }
+    var views: String? { get }
+    var photoAttachements: [FeedCellPhotoAttachementViewModel] { get }
+    var sizes: FeedCellSizes { get }
+}
+
+protocol FeedCellSizes {
+    var postLabelFrame: CGRect { get }
+    var attachmentFrame: CGRect { get }
+    var bottomViewFrame: CGRect { get }
+    var totalHeight: CGFloat { get }
+    var moreTextButtonFrame: CGRect { get }
+}
+
+protocol FeedCellPhotoAttachementViewModel {
+    var photoUrlString: String? { get }
+    var width: Int { get }
+    var height: Int { get }
+}
+
 final class NewsfeedCodeCell: UITableViewCell {
     
     static let reuseID = "NewsfeedCodeCell"
-    
+    weak var delegate: NewsfeedCodeCellDelegate?
     //MARK: - Layers
     //First layer
     let cardView: UIView = {
@@ -35,6 +66,18 @@ final class NewsfeedCodeCell: UITableViewCell {
         label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
         return label
     }()
+    
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(#colorLiteral(red: 0.4, green: 0.6235294118, blue: 0.831372549, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Expand text ... ", for: .normal)
+        return button
+    }()
+    
+    let galleryCollectionView = GalleryCollectionView()
     
     let postImageView: WebImageView = {
         let imageView = WebImageView()
@@ -161,15 +204,25 @@ final class NewsfeedCodeCell: UITableViewCell {
         return label
     }()
     
+    override func prepareForReuse() {
+        iconImageView.set(imageURL: nil)
+        postImageView.set(imageURL: nil)
+    }
+    
     //MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
+        iconImageView.clipsToBounds = true
         
         backgroundColor = .clear
         selectionStyle = .none
         
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
+        
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
         
         overlayFirstLayer()
         overlaySecondLayer()
@@ -182,6 +235,10 @@ final class NewsfeedCodeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func moreTextButtonTouch() {
+        delegate?.revealPost(for: self)
+    }
+    
     //MARK: - CardView constraints NSLoyaonAncor
     private func overlayFirstLayer() {
         addSubview(cardView)
@@ -192,7 +249,9 @@ final class NewsfeedCodeCell: UITableViewCell {
     private func overlaySecondLayer() {
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
+        cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
+        cardView.addSubview(galleryCollectionView)
         cardView.addSubview(bottomView)
         
         //topView constraints
@@ -241,24 +300,24 @@ final class NewsfeedCodeCell: UITableViewCell {
         
         //commentsView constraints
         commentsView.anchor(top: bottomView.topAnchor,
-                           leading: likesView.trailingAnchor,
-                           bottom: nil,
-                           trailing: nil,
-                           size: CGSize(width: Constants.bottomViewViewWidth, height: Constants.bottomViewViewHeight))
-        
-        //sharesView constraints
-        sharesView.anchor(top: bottomView.topAnchor,
-                            leading: commentsView.trailingAnchor,
+                            leading: likesView.trailingAnchor,
                             bottom: nil,
                             trailing: nil,
                             size: CGSize(width: Constants.bottomViewViewWidth, height: Constants.bottomViewViewHeight))
         
+        //sharesView constraints
+        sharesView.anchor(top: bottomView.topAnchor,
+                          leading: commentsView.trailingAnchor,
+                          bottom: nil,
+                          trailing: nil,
+                          size: CGSize(width: Constants.bottomViewViewWidth, height: Constants.bottomViewViewHeight))
+        
         //viewsView constraints
         viewsView.anchor(top: bottomView.topAnchor,
-                          leading: nil,
-                          bottom: nil,
-                          trailing: bottomView.trailingAnchor,
-                          size: CGSize(width: Constants.bottomViewViewWidth, height: Constants.bottomViewViewHeight))
+                         leading: nil,
+                         bottom: nil,
+                         trailing: bottomView.trailingAnchor,
+                         size: CGSize(width: Constants.bottomViewViewWidth, height: Constants.bottomViewViewHeight))
     }
     
     private func overlayFourthLayerOnBottomViewViews() {
@@ -307,14 +366,23 @@ final class NewsfeedCodeCell: UITableViewCell {
         viewsLabel.text = viewModel.views
         
         postLabel.frame = viewModel.sizes.postLabelFrame
-        postImageView.frame = viewModel.sizes.attachmentFrame
-        bottomView.frame = viewModel.sizes.bottomViewFrame
         
-        if let photoAttachment = viewModel.photoAttachement {
+        bottomView.frame = viewModel.sizes.bottomViewFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
+        
+        if let photoAttachment = viewModel.photoAttachements.first, viewModel.photoAttachements.count == 1 {
             postImageView.set(imageURL: photoAttachment.photoUrlString)
             postImageView.isHidden = false
+            galleryCollectionView.isHidden = true
+            postImageView.frame = viewModel.sizes.attachmentFrame
+        } else if viewModel.photoAttachements.count > 1 {
+            galleryCollectionView.frame = viewModel.sizes.attachmentFrame
+            postImageView.isHidden = true
+            galleryCollectionView.isHidden = false
+            galleryCollectionView.set(photos: viewModel.photoAttachements)
         } else {
             postImageView.isHidden = true
+            galleryCollectionView.isHidden = true
         }
     }
 }
