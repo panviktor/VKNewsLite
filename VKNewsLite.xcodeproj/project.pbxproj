@@ -112,9 +112,9 @@
 				77423C94242A9F71003BB591 /* NewsfeedViewController.storyboard */,
 				77423C8A242A9B80003BB591 /* NewsfeedViewController.swift */,
 				77423C8B242A9B80003BB591 /* NewsfeedInteractor.swift */,
+				77423C87242A9B80003BB591 /* NewsfeedWorker.swift */,
 				77423C86242A9B80003BB591 /* NewsfeedPresenter.swift */,
 				77423C89242A9B80003BB591 /* NewsfeedModels.swift */,
-				77423C87242A9B80003BB591 /* NewsfeedWorker.swift */,
 				77423C88242A9B80003BB591 /* NewsfeedRouter.swift */,
 			);
 			path = Newsfeed;
