@@ -69,7 +69,6 @@ class RowLayout: UICollectionViewLayout {
             let width = (rowHeight / ratio)
             let frame = CGRect(x: xOffset[row], y: yOffset[row], width: width, height: rowHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
-            
             let attribute = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attribute.frame = insetFrame
             cache.append(attribute)
@@ -78,7 +77,6 @@ class RowLayout: UICollectionViewLayout {
             xOffset[row] = xOffset[row] + width
             row = row < (RowLayout.numbersOfRows - 1) ? (row + 1) : 0
         }
-        
     }
     
     static func rowHeightCounter(superviewWidth: CGFloat, photosArray: [CGSize]) -> CGFloat? {

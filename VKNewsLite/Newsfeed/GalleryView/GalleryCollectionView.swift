@@ -12,7 +12,6 @@ final class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, U
     
     var photos = [FeedCellPhotoAttachementViewModel]()
     
-
     init() {
         let rowLayout = RowLayout()
         super.init(frame: .zero, collectionViewLayout: rowLayout)
