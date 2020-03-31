@@ -24,6 +24,7 @@
 		7742C0812432670E00BF5253 /* TitlteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C0802432670E00BF5253 /* TitlteView.swift */; };
 		7742C083243267F700BF5253 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C082243267F700BF5253 /* InsetableTextField.swift */; };
 		7742C0872432782300BF5253 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C0862432782300BF5253 /* RowLayout.swift */; };
+		7742C0892433465400BF5253 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742C0882433465400BF5253 /* UserResponse.swift */; };
 		779DE8F6242BC14F005F8CFB /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779DE8F5242BC14F005F8CFB /* WebImageView.swift */; };
 		77AB84C12429080400E3B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB84C02429080400E3B3A5 /* AppDelegate.swift */; };
 		77AB84CA2429080700E3B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77AB84C92429080700E3B3A5 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		7742C0802432670E00BF5253 /* TitlteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlteView.swift; sourceTree = "<group>"; };
 		7742C082243267F700BF5253 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		7742C0862432782300BF5253 /* RowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
+		7742C0882433465400BF5253 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		779DE8F5242BC14F005F8CFB /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		77AB84BD2429080400E3B3A5 /* VKNewsLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77AB84C02429080400E3B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				77AB84F2242A840800E3B3A5 /* FeedResponse.swift */,
+				7742C0882433465400BF5253 /* UserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7742C07A243217A600BF5253 /* GalleryCollectionView.swift in Sources */,
+				7742C0892433465400BF5253 /* UserResponse.swift in Sources */,
 				77AB84F3242A840800E3B3A5 /* FeedResponse.swift in Sources */,
 				77423C91242A9B80003BB591 /* NewsfeedViewController.swift in Sources */,
 				77AB84E124294CB800E3B3A5 /* AuthViewController.swift in Sources */,

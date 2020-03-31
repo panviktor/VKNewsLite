@@ -18,9 +18,8 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
     var router: (NSObjectProtocol & NewsfeedRoutingLogic)?
     
     private var feedViewModel = FeedViewModel.init(cells: [])
-    
-    @IBOutlet var table: UITableView!
     private var titleView = TitleView()
+    @IBOutlet var table: UITableView!
     
     // MARK: Setup
     private func setup() {
@@ -37,8 +36,6 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
     
     // MARK: Routing
     
-    
-    
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +49,7 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
         view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         
         interactor?.makeRequest(request: .getNewsfeed)
+        interactor?.makeRequest(request: .getUser)
     }
     
     private func setupTopBars() {
@@ -65,10 +63,11 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
         case .displayNewsfeed(let feedViewModel):
             self.feedViewModel = feedViewModel
             table.reloadData()
+        case .displayUser(userViewModel: let userViewModel):
+            titleView.set(userViewModel: userViewModel)
         }
     }
 }
-
 
 extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

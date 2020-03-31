@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TitleViewViewModel {
+    var photoUrlString: String? { get }
+}
+
 class TitleView: UIView{
     
     private var myTextField = InsetableTextField()
@@ -30,6 +34,10 @@ class TitleView: UIView{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(userViewModel: TitleViewViewModel) {
+        myAvatarView.set(imageURL: userViewModel.photoUrlString)
     }
     
     private func makeConstraints() {
@@ -56,7 +64,6 @@ class TitleView: UIView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         myAvatarView.layer.masksToBounds = true
         myAvatarView.layer.cornerRadius = myAvatarView.frame.width / 2
     }

@@ -16,6 +16,7 @@ final class NetworkService: Networking {
     
     private let authService: AuthService
     
+    
     init(authService: AuthService = AppDelegate.shared().authService) {
         self.authService = authService
     }
@@ -43,7 +44,7 @@ final class NetworkService: Networking {
         var components = URLComponents()
         components.scheme = API.scheme
         components.host = API.host
-        components.path = API.newsFeed
+        components.path = path
         components.queryItems = params.map {  URLQueryItem(name: $0, value: $1) }
         return components.url!
     }
