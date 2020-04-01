@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7a-6x-J5j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7a-6x-J5j">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,15 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVZ-WF-tix" customClass="GradientView" customModule="VKNewsLite" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.5568627451" blue="0.54901960780000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.7843137255" blue="0.54901960780000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-Nt-hv5">
-                                <rect key="frame" x="159" y="428" width="96" height="40"/>
+                                <rect key="frame" x="136" y="428" width="142" height="40"/>
                                 <color key="backgroundColor" red="0.86576493524953457" green="0.86576493524953457" blue="0.86576493524953457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gvX-az-lxB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="25"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" title="Log in"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signInTouch" destination="r7a-6x-J5j" eventType="touchUpInside" id="VQF-sb-Bg0"/>
                                 </connections>
@@ -31,11 +46,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nVZ-WF-tix" secondAttribute="bottom" id="Agj-U2-T13"/>
                             <constraint firstItem="6TM-Nt-hv5" firstAttribute="centerY" secondItem="dsi-Wb-qtX" secondAttribute="centerY" id="ItT-Ep-OTK"/>
+                            <constraint firstItem="r7b-Ps-F4o" firstAttribute="trailing" secondItem="nVZ-WF-tix" secondAttribute="trailing" id="RPj-Zy-Rwv"/>
                             <constraint firstItem="6TM-Nt-hv5" firstAttribute="centerX" secondItem="dsi-Wb-qtX" secondAttribute="centerX" id="ipy-Io-uxp"/>
+                            <constraint firstItem="nVZ-WF-tix" firstAttribute="top" secondItem="dsi-Wb-qtX" secondAttribute="top" id="jW4-bm-kJ9"/>
+                            <constraint firstItem="nVZ-WF-tix" firstAttribute="leading" secondItem="r7b-Ps-F4o" secondAttribute="leading" id="rYf-ub-OxF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r7b-Ps-F4o"/>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="6TM-Nt-hv5" id="1WN-vY-0PG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5F-Cg-E0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
